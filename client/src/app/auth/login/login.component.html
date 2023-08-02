@@ -1,0 +1,33 @@
+<section>
+  <div class="form">
+    <h2>Login</h2>
+    <form
+      class="login-form"
+      #loginForm="ngForm"
+      (ngSubmit)="submitHandler(loginForm)"
+    >
+    <!-- Username -->
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="username"
+        ngModel
+      />
+
+    <!-- Password -->
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+        ngModel
+      />
+
+      <button>login</button>
+      <p class="message">
+        Not registered? <a routerLink="/auth/register"> Create an account </a>
+      </p>
+    </form>
+  </div>
+</section>
