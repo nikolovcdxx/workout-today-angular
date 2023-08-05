@@ -1,37 +1,44 @@
 <section>
-    <div class="form">
-        <h2>Register</h2>
-        <form class="login-form">
-            <input
-                type="text"
-                name="username"
-                id="register-username"
-                placeholder="username"
-            />
-            
-                <p> Username should be atleast 3 characters long!</p>
-            
-            <input
-                type="password"
-                name="password"
-                id="register-password"
-                placeholder="password"
-            />
-            
-                <p> Password should be atleast 3 characters long!</p>
-            
-            <input
-                type="password"
-                name="repass"
-                id="repass"
-                placeholder="repeat password"
-            />
-                <p> Passwords don\'t match!</p>
+  <div class="form">
+    <h2>Register</h2>
+    <form
+      class="login-form"
+      #registerForm="ngForm"
+      (ngSubmit)="submitHandler(registerForm)"
+    >
+      <input
+        type="text"
+        name="username"
+        id="register-username"
+        placeholder="username"
+        ngModel
+      />
 
-            <button>register</button>
-            <p class="message">
-                Already registered? <a routerLink="/auth/login">Login</a>
-            </p>
-        </form>
-    </div>
+      <p>Username should be atleast 3 characters long!</p>
+
+      <input
+        type="password"
+        name="password"
+        id="register-password"
+        placeholder="password"
+        ngModel
+      />
+
+      <p>Password should be atleast 3 characters long!</p>
+
+      <input
+        type="password"
+        name="repass"
+        id="repass"
+        placeholder="repeat password"
+        ngModel
+      />
+      <p>Passwords don\'t match!</p>
+
+      <button>register</button>
+      <p class="message">
+        Already registered? <a routerLink="/auth/login">Login</a>
+      </p>
+    </form>
+  </div>
 </section>

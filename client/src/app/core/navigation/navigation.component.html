@@ -1,36 +1,21 @@
 <nav>
-    <div>
-        <a class="active" routerLink="">
-            WORKOUT TODAY
-        </a>
-    </div>
-    <a href="/workouts">
-        All Workouts
-    </a>
+  <div>
+    <a class="active" routerLink=""> WORKOUT TODAY </a>
+  </div>
+  <a href="/workouts"> All Workouts </a>
 
-    <div class="user">
-        <a href="/create">
-            Create Your Workout
-        </a>
-        <div class="profile">
-            <span>
-                Welcome, username
-            </span>
-            <a href="/my-workout">
-                My Workout
-            </a>
-            <a href="/logout">Logout</a>
-        </div>
+  <div *ngIf="isLoggedIn" class="user">
+    <a href="/create"> Create Your Workout </a>
+    <div class="profile">
+      <span> Welcome, {{ username }} </span>
+      <a href="/my-workout"> My Workout </a>
+      <a routerLink="/logout" (click)="logout()">Logout</a>
     </div>
-    <div class="guest">
-        <div class="profile">
-            <a routerLink="/auth/login">
-                Login
-            </a>
-            <a routerLink="/auth/register">
-                Register
-            </a>
-        </div>
-
+  </div>
+  <div *ngIf="!isLoggedIn" class="guest">
+    <div class="profile">
+      <a routerLink="/auth/login"> Login </a>
+      <a routerLink="/auth/register"> Register </a>
     </div>
+  </div>
 </nav>
