@@ -1,0 +1,18 @@
+<section id="catalog-section" class="spaced">
+  <h1 class="item">Workouts</h1>
+  <ul class="catalog cards">
+    <div
+      *ngIf="workoutsList.length === 0"
+      class="item pad-large align-center no-workouts"
+    >
+      <p>Nothing has been listed yet. Be the first!</p>
+      <div>
+        <a class="action" routerLink="/workouts/create"> Create Workout </a>
+      </div>
+    </div>
+
+    <li class="item" *ngFor="let workout of workoutsList">
+        <app-catalog-item [workout]="workout" />
+    </li>
+  </ul>
+</section>

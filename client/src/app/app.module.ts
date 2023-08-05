@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './home/home.component';
+import { WorkoutsModule } from './workouts/workouts.module';
 // import { appInterceptorProvider } from './token.interceptor';
 
 @NgModule({
@@ -15,10 +16,11 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     CoreModule,
     SharedModule,
     AuthModule,
-    HttpClientModule
+    WorkoutsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

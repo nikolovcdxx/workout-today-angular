@@ -1,0 +1,105 @@
+:root {
+
+
+    --action-color: 300;
+    --action-s: 40%;
+    --action-l: 55%;
+
+    --round: 0;
+    --shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.spaced>* {
+    margin: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.catalog {
+    list-style: none;
+    padding: 0;
+}
+
+.catalog.cards {
+    margin-left: 16px;
+    margin-right: -16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.catalog.cards::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.catalog.cards li {
+    float: left;
+    width: 284px;
+    margin: 16px;
+    margin-top: 0;
+}
+
+.catalog.cards li>main {
+    height: 200px;
+    overflow: hidden;
+}
+
+.catalog.cards h2 {
+    height: 52px;
+}
+
+.catalog.cards footer {
+    overflow: hidden;
+}
+
+.align-center {
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.item {
+    box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.item p {
+    margin-bottom: 16px;
+}
+
+.item h2 {
+    text-align: center;
+    font-size: 32px;
+}
+
+.action {
+    display: inline-block;
+    border: none;
+    padding: 8px 16px;
+    margin: 4px 8px;
+    text-decoration: none;
+}
+
+#catalog-section h1, #catalog-section header {
+    background-color: #5eba5e;
+}
+
+.action {
+    background-color: #7d367d;
+    color: white;
+}
+
+.action:hover {
+    background-color: #ba5eba;
+    cursor: pointer;
+    color: white;
+}
+
+.no-workouts {
+    width: '96%';
+    margin-right: '32px'
+}

@@ -1,0 +1,29 @@
+<header class="pad-med">
+  <h2 *ngIf="currentUser" [ngStyle]="{color: 'lawngreen'}">My workout</h2>
+
+  <h2 *ngIf="!currentUser">{{ username }}'s workout</h2>
+</header>
+<div class="align-center">
+  <img class="img-thumb" src="../../../assets/images/{{workout?.type}}.gif" alt="" />
+</div>
+<footer class="align-center pad-med">
+  <span *ngIf="currentUser"
+    >My choise today:
+    <div>
+      <strong>{{ workout?.type?.toUpperCase() }}</strong>
+    </div></span
+  >
+  <span *ngIf="!currentUser"
+    >His choise today:
+    <div>
+      <strong>{{ workout?.type?.toUpperCase() }}</strong>
+    </div></span
+  >
+
+  <a *ngIf="currentUser" class="action" routerLink="/my-workout">
+    See details
+  </a>
+  <a *ngIf="!currentUser" class="action" routerLink="{{workout?._id}}">
+    See details
+  </a>
+</footer>

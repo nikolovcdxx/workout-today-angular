@@ -2,14 +2,14 @@
   <div>
     <a class="active" routerLink=""> WORKOUT TODAY </a>
   </div>
-  <a href="/workouts"> All Workouts </a>
+  <a routerLink="/workouts/catalog"> All Workouts </a>
 
   <div *ngIf="isLoggedIn" class="user">
     <a href="/create"> Create Your Workout </a>
     <div class="profile">
       <span> Welcome, {{ username }} </span>
       <a href="/my-workout"> My Workout </a>
-      <a routerLink="/logout" (click)="logout()">Logout</a>
+      <a (click)="logout()">Logout</a>
     </div>
   </div>
   <div *ngIf="!isLoggedIn" class="guest">
