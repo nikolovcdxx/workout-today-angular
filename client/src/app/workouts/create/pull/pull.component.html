@@ -1,0 +1,114 @@
+<form>
+  <section id="dashboard">
+    <h2 class="card-title">PULL EXERCISES</h2>
+    <ul class="push-card-wrapper">
+      <li class="push-card">
+        <label for="upper-back1">UPPER BACK</label>
+        <select name="upper-back1" id="upper-back1">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="barbell-rows">Barbell Rows</option>
+          <option value="seated-rows">Seated Rows</option>
+          <option value="meadows-rows">Meadows Rows</option>
+          <option value="chest-supported-dumbbell-rows">
+            Chest Supported Dumbbell Rows
+          </option>
+        </select>
+        <button type="button" id="up-back1" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+
+        <select name="upper-back2" id="upper-back2">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="barbell-rows">Barbell Rows</option>
+          <option value="seated-rows">Seated Rows</option>
+          <option value="meadows-rows">Meadows Rows</option>
+          <option value="chest-supported-dumbbell-rows">
+            Chest Supported Dumbbell Rows
+          </option>
+        </select>
+        <button type="button" id="up-back2" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+
+        <label for="lats1">LATS</label>
+        <select name="lats1" id="lats1">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="seated-rows-lats-focused">
+            Seated Rows Lats Focused
+          </option>
+          <option value="chest-supported-dumbbell-lat-rows">
+            Chest Supported Dumbbell Lat Rows
+          </option>
+          <option value="one-arm-cable-rows">One Arm Cable Rows</option>
+          <option value="lat-pulldowns">Lat Pulldowns</option>
+        </select>
+        <button type="button" id="lat1" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+
+        <select name="lats2" id="lats2">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="seated-rows-lats-focused">
+            Seated Rows Lats Focused
+          </option>
+          <option value="chest-supported-dumbbell-lat-rows">
+            Chest Supported Dumbbell Lat Rows
+          </option>
+          <option value="one-arm-cable-rows">One Arm Cable Rows</option>
+          <option value="lat-pulldowns">Lat Pulldowns</option>
+        </select>
+        <button type="button" id="lat2" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+      </li>
+      <li class="push-card">
+        <label for="biceps1">BICEPS</label>
+        <select name="biceps1" id="biceps1">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="incline-dumbbell-curls">Incline Dumbbell Curls</option>
+          <option value="chinups">Chinups</option>
+          <option value="barbell-curls">Barbell Curls</option>
+          <option value="alt.-standing-dumbbell-curls">
+            Alt. Standing Dumbbell Curls
+          </option>
+        </select>
+        <button type="button" id="bicep1" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+
+        <select name="biceps2" id="biceps2">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="incline-dumbbell-curls">Incline Dumbbell Curls</option>
+          <option value="chinups">Chinups</option>
+          <option value="barbell-curls">Barbell Curls</option>
+          <option value="alt.-standing-dumbbell-curls">
+            Alt. Standing Dumbbell Curls
+          </option>
+        </select>
+        <button type="button" id="bicep2" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+      </li>
+      <li class="push-card">
+        <label for="rear-delt">SHOULDER REAR DELT</label>
+        <select name="rear-delt" id="rear-delt">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="double-arm-reverse-cable-fly">
+            Double Arm Reverse Cable Fly
+          </option>
+          <option value="dumbbell-rear-delt-rows">
+            Dumbbell Rear Delt Rows
+          </option>
+          <option value="dumbbell-hip-huggers">Dumbbell Hip Huggers</option>
+          <option value="reverse-peck-deck-machine">
+            Reverse Peck Deck Machine
+          </option>
+        </select>
+        <button type="button" id="r-delt" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+      </li>
+    </ul>
+  </section>
+  <button class="btn-generate" (click)="generateHandler">GENERATE</button>
+</form>

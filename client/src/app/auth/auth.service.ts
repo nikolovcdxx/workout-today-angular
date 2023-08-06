@@ -16,6 +16,7 @@ export class AuthService implements OnDestroy {
   user: User | undefined;
 
   USER_KEY = 'auth';
+  isUser: string | null = localStorage.getItem('auth');
 
   get isLogged(): boolean {
     return !!this.user;
@@ -60,6 +61,12 @@ export class AuthService implements OnDestroy {
         localStorage.clear();
       })
     );
+  }
+
+  getUser() {
+    return this.isUser === null
+      ? this.user
+      : this.user$$.next(JSON.parse(this.isUser));
   }
 
   ngOnDestroy(): void {

@@ -1,0 +1,87 @@
+<form>
+  <section id="dashboard">
+    <h2 class="card-title">LEGS EXERCISES</h2>
+    <ul class="push-card-wrapper">
+      <li class="push-card">
+        <label for="quadriceps1">QUADRICEPS (FRONT THIGH)</label>
+        <select name="quadriceps1" id="quadriceps1">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="front-squats">Front Squats</option>
+          <option value="hack-squats">Hack Squats</option>
+          <option value="high-bar-back-squats">High Bar Back Squats</option>
+          <option value="leg-extensions">Leg Extensions</option>
+          <option value="leg-press">Leg Press</option>
+        </select>
+        <button type="button" id="quad1" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+
+        <select name="quadriceps2" id="quadriceps2">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="front-squats">Front Squats</option>
+          <option value="hack-squats">Hack Squats</option>
+          <option value="high-bar-back-squats">High Bar Back Squats</option>
+          <option value="leg-extensions">Leg Extensions</option>
+          <option value="leg-press">Leg Press</option>
+        </select>
+        <button type="button" id="quad2" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+
+        <label for="hamstrings">HAMSTRINGS (BACK THIGH)</label>
+        <select name="hamstrings" id="hamstrings">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="seated-leg-curl">Seated Leg Curl</option>
+          <option value="barbell-romanian-deadlift">
+            Barbell Romanian Deadlift
+          </option>
+          <option value="glute-ham-raises">Glute Ham Raises</option>
+          <option value="stationary-split-squats">
+            Stationary Split Squats
+          </option>
+        </select>
+        <button type="button" id="hamstring" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+      </li>
+      <li class="push-card">
+        <label for="glutes1">GLUTES (BUTT)</label>
+        <select name="glutes1" id="glutes1">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="barbell-hip-thrust">Barbell Hip Thrust</option>
+          <option value="45°-hip-extension">45° Hip Extension</option>
+          <option value="deadlift">Deadlift</option>
+          <option value="cable-pull-throughs">Cable Pull Throughs</option>
+          <option value="glute-medius-kickbacks">Glute Medius Kickbacks</option>
+        </select>
+        <button type="button" id="gl1" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+
+        <select name="glutes2" id="glutes2">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="barbell-hip-thrust">Barbell Hip Thrust</option>
+          <option value="45°-hip-extension">45° Hip Extension</option>
+          <option value="deadlift">Deadlift</option>
+          <option value="cable-pull-throughs">Cable Pull Throughs</option>
+          <option value="glute-medius-kickbacks">Glute Medius Kickbacks</option>
+        </select>
+        <button type="button" id="gl2" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+
+        <label for="calves">CALVES</label>
+        <select name="calves" id="calves">
+          <option value="none" hidden>Select an Exercise</option>
+          <option value="standing-calf-raises">Standing Calf Raises</option>
+          <option value="seated-calf-raises">Seated Calf Raises</option>
+          <option value="leg-press-calf-raises">Leg Press Calf Raises</option>
+        </select>
+        <button type="button" id="calf" (click)="(onClickVideoHandler)">
+          How To Do It Properly
+        </button>
+      </li>
+    </ul>
+  </section>
+  <button class="btn-generate" (click)="(generateHandler)">GENERATE</button>
+</form>

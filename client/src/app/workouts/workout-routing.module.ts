@@ -1,16 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CatalogComponent } from './catalog/catalog.component';
+import { MyWorkoutComponent } from './my-workout/my-workout.component';
 // import { AuthActivate } from '../core/guards/auth.activate';
 
 const routes: Routes = [
   {
-    path: 'catalog',
+    path: '',
     component: CatalogComponent,
     // canActivate: [AuthActivate],
     // data: {
     //   showAfterAuth: false
     // }
+  },
+  {
+    path: 'my-workout',
+    component: MyWorkoutComponent,
+  },
+  {
+    path: 'create',
+    loadChildren: () =>
+      import('./create/create.module').then((m) => m.CreateModule),
   },
 ];
 
