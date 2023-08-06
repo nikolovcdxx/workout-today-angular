@@ -4,7 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [RegisterComponent, LoginComponent],
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     FormsModule, //Template driven form
+    AuthRoutingModule,
   ],
   exports: [RegisterComponent, LoginComponent],
 })
