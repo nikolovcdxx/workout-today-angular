@@ -19,7 +19,7 @@ export class LoginComponent {
       form.value;
       
       this.authService.login(username, password).subscribe((result) => {
-        this.router.navigate(['/workouts/catalog']);
+        this.router.navigate(['/workouts']);
         
       });
   }

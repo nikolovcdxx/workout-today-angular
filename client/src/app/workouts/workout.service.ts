@@ -10,26 +10,25 @@ export class WorkoutService {
   constructor(private http: HttpClient) {}
 
   workouts: any = [];
-  workoutUrl: string = environment.workoutUrl;
 
   get workoutCollection(): string {
     return this.workouts || [];
   }
 
   getAll() {
-    return this.http.get<Workout[]>(`${this.workoutUrl}`);
+    return this.http.get<Workout[]>('/api/data/workouts');
   }
 
   getOne(id: string) {
-    return this.http.get<Workout>(`${this.workoutUrl}/${id}`);
+    return this.http.get<Workout>(`/api/data/workouts/${id}`);
   }
 
   create(type: string, exercises: any) {
-    return this.http.post<Workout>(this.workoutUrl, { type, exercises });
+    return this.http.post<Workout>('/api/data/workouts', { type, exercises });
   }
 
   edit(workoutId: string, type: string, exercises: any, ownerName: string) {
-    return this.http.put<Workout>(`${this.workoutUrl}/${workoutId}`, {
+    return this.http.put<Workout>(`/api/data/workouts/${workoutId}`, {
       type,
       exercises,
       ownerName,
@@ -37,6 +36,6 @@ export class WorkoutService {
   }
 
   remove(workoutId: string) {
-    return this.http.delete<Workout>(`${this.workoutUrl}/${workoutId}`);
+    return this.http.delete<Workout>(`/api/data/workouts/${workoutId}`);
   }
 }

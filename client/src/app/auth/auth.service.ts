@@ -31,7 +31,7 @@ export class AuthService implements OnDestroy {
   }
 
   login(username: string, password: string) {
-    return this.http.post<User>(`${apiUrl}/login`, { username, password }).pipe(
+    return this.http.post<User>('/api/users/login', { username, password }).pipe(
       tap((user) => {
         this.user$$.next(user);
         localStorage.setItem(this.USER_KEY, JSON.stringify(user));
@@ -41,7 +41,7 @@ export class AuthService implements OnDestroy {
 
   register(username: string, password: string, repass: string) {
     return this.http
-      .post<User>(`${apiUrl}/register`, {
+      .post<User>('/api/users/register', {
         username,
         password,
         repass,
@@ -55,7 +55,7 @@ export class AuthService implements OnDestroy {
   }
 
   logout() {
-    return this.http.get<User>(`${apiUrl}/logout`, {}).pipe(
+    return this.http.get<User>('/api/users/logout', {}).pipe(
       tap(() => {
         this.user$$.next(undefined);
         localStorage.clear();
