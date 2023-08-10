@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CatalogComponent } from './catalog/catalog.component';
 import { MyWorkoutComponent } from './my-workout/my-workout.component';
+import { DetailsComponent } from './details/details.component';
 // import { AuthActivate } from '../core/guards/auth.activate';
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
     path: 'create',
     loadChildren: () =>
       import('./create/create.module').then((m) => m.CreateModule),
+  },
+  {
+    path: 'details/:workoutId',
+    component: DetailsComponent
   },
 ];
 

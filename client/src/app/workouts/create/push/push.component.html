@@ -36,21 +36,21 @@
                 <label for="triceps1">TRICEPS</label>
                 <select name="triceps1" id="triceps1" formControlName="triceps1">
                     <option value="" hidden>Select an Exercise</option>
-                    <option value="lying-tricep-extension">Lying Tricep Extension</option>
-                    <option value="incline-dumbbell-powerbombs" >Incline Dumbbell Powerbombs</option>
-                    <option value="rocking-pushdowns" >Rocking Pushdowns</option>
-                    <option value="close-grip-bench-press" >Close Grip Bench Press</option>
-                    <option value="dumbbell-kickbacks" >Dumbbell Kickbacks</option>
+                    <option value="lying-tricep-extension" [disabled]="pushForm.value.triceps2 === 'lying-tricep-extension'">Lying Tricep Extension</option>
+                    <option value="incline-dumbbell-powerbombs" [disabled]="pushForm.value.triceps2 === 'incline-dumbbell-powerbombs'">Incline Dumbbell Powerbombs</option>
+                    <option value="rocking-pushdowns" [disabled]="pushForm.value.triceps2 === 'rocking-pushdowns'">Rocking Pushdowns</option>
+                    <option value="close-grip-bench-press" [disabled]="pushForm.value.triceps2 === 'close-grip-bench-press'">Close Grip Bench Press</option>
+                    <option value="dumbbell-kickbacks" [disabled]="pushForm.value.triceps2 === 'dumbbell-kickbacks'">Dumbbell Kickbacks</option>
                 </select>
                 <button type="button" id="tri1" (click)="onClickVideoHandler">How To Do It Properly</button>
 
                 <select name="triceps2" id="triceps2" formControlName="triceps2">
                     <option value="" hidden>Select an Exercise</option>
-                    <option value="lying-tricep-extension" >Lying Tricep Extension</option>
-                    <option value="incline-dumbbell-powerbombs" >Incline Dumbbell Powerbombs</option>
-                    <option value="rocking-pushdowns" >Rocking Pushdowns</option>
-                    <option value="close-grip-bench-press" >Close Grip Bench Press</option>
-                    <option value="dumbbell-kickbacks" >Dumbbell Kickbacks</option>
+                    <option value="lying-tricep-extension" [disabled]="pushForm.value.triceps1 === 'lying-tricep-extension'">Lying Tricep Extension</option>
+                    <option value="incline-dumbbell-powerbombs" [disabled]="pushForm.value.triceps1 === 'incline-dumbbell-powerbombs'">Incline Dumbbell Powerbombs</option>
+                    <option value="rocking-pushdowns" [disabled]="pushForm.value.triceps1 === 'rocking-pushdowns'">Rocking Pushdowns</option>
+                    <option value="close-grip-bench-press" [disabled]="pushForm.value.triceps1 === 'close-grip-bench-press'">Close Grip Bench Press</option>
+                    <option value="dumbbell-kickbacks" [disabled]="pushForm.value.triceps1 === 'dumbbell-kickbacks'">Dumbbell Kickbacks</option>
                 </select>
                 <button type="button" id="tri2" (click)="onClickVideoHandler">How To Do It Properly</button>
             </li>

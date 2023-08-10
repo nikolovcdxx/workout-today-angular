@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { WorkoutCreationService } from '../workout-creation.service';
+import { Workout } from 'src/app/types/workout';
 import { WorkoutService } from '../../workout.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-push',
   templateUrl: './push.component.html',
   styleUrls: ['./push.component.css'],
 })
-export class PushComponent implements OnInit {
+export class PushComponent {
   pushForm = this.fb.group({
     'upper-chest': ['', [Validators.required]],
     'middle-chest': ['', [Validators.required]],
@@ -21,21 +22,14 @@ export class PushComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private workoutService: WorkoutService,
-    private router: Router
+    private creationService: WorkoutCreationService,
+    private workoutService: WorkoutService
   ) {}
 
-  ngOnInit(): void {}
 
   generateHandler(pushForm: FormGroup) {
-    if (pushForm.invalid) {
-      return alert('All exercises must be selected');
-    }
-
-    this.workoutService.create('push', pushForm.value).subscribe((result) => {
-      console.log(result);
-      this.router.navigate(['/workouts']);
-    });
+    
+    this.creationService.workoutCreation(pushForm, 'push');
   }
 
   onClickVideoHandler() {

@@ -20,10 +20,10 @@
     </div></span
   >
 
-  <a *ngIf="currentUser" class="action" routerLink="/my-workout">
+  <a *ngIf="currentUser" class="action" routerLink="my-workout">
     See details
   </a>
-  <a *ngIf="!currentUser" class="action" routerLink="{{workout?._id}}">
+  <a *ngIf="!currentUser" class="action" routerLink="details/{{workout?._id}}">
     See details
   </a>
 </footer>

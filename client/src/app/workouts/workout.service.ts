@@ -1,19 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Workout } from '../types/workout';
-import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WorkoutService {
   constructor(private http: HttpClient) {}
-
-  workouts: any = [];
-
-  get workoutCollection(): string {
-    return this.workouts || [];
-  }
 
   getAll() {
     return this.http.get<Workout[]>('/api/data/workouts');

@@ -1,15 +1,15 @@
-<form>
+<form [formGroup]="pullForm" (ngSubmit)="generateHandler">
   <section id="dashboard">
     <h2 class="card-title">PULL EXERCISES</h2>
     <ul class="push-card-wrapper">
       <li class="push-card">
         <label for="upper-back1">UPPER BACK</label>
-        <select name="upper-back1" id="upper-back1">
-          <option value="none" hidden>Select an Exercise</option>
-          <option value="barbell-rows">Barbell Rows</option>
-          <option value="seated-rows">Seated Rows</option>
-          <option value="meadows-rows">Meadows Rows</option>
-          <option value="chest-supported-dumbbell-rows">
+        <select name="upper-back1" id="upper-back1" formControlName="upper-back1">
+          <option value="" hidden>Select an Exercise</option>
+          <option value="barbell-rows" [disabled]="pullForm.value['upper-back2'] === 'barbell-rows'">Barbell Rows</option>
+          <option value="seated-rows" [disabled]="pullForm.value['upper-back2'] === 'seated-rows'">Seated Rows</option>
+          <option value="meadows-rows" [disabled]="pullForm.value['upper-back2'] === 'meadows-rows'">Meadows Rows</option>
+          <option value="chest-supported-dumbbell-rows" [disabled]="pullForm.value['upper-back2'] === 'chest-supported-dumbbell-rows'">
             Chest Supported Dumbbell Rows
           </option>
         </select>
@@ -17,12 +17,12 @@
           How To Do It Properly
         </button>
 
-        <select name="upper-back2" id="upper-back2">
-          <option value="none" hidden>Select an Exercise</option>
-          <option value="barbell-rows">Barbell Rows</option>
-          <option value="seated-rows">Seated Rows</option>
-          <option value="meadows-rows">Meadows Rows</option>
-          <option value="chest-supported-dumbbell-rows">
+        <select name="upper-back2" id="upper-back2" formControlName="upper-back2">
+          <option value="" hidden>Select an Exercise</option>
+          <option value="barbell-rows" [disabled]="pullForm.value['upper-back1'] === 'barbell-rows'">Barbell Rows</option>
+          <option value="seated-rows" [disabled]="pullForm.value['upper-back1'] === 'seated-rows'">Seated Rows</option>
+          <option value="meadows-rows" [disabled]="pullForm.value['upper-back1'] === 'meadows-rows'">Meadows Rows</option>
+          <option value="chest-supported-dumbbell-rows" [disabled]="pullForm.value['upper-back1'] === 'chest-supported-dumbbell-rows'">
             Chest Supported Dumbbell Rows
           </option>
         </select>
@@ -31,44 +31,45 @@
         </button>
 
         <label for="lats1">LATS</label>
-        <select name="lats1" id="lats1">
-          <option value="none" hidden>Select an Exercise</option>
-          <option value="seated-rows-lats-focused">
+        <select name="lats1" id="lats1" formControlName="lats1">
+          <option value="" hidden>Select an Exercise</option>
+          <option value="seated-rows-lats-focused" [disabled]="pullForm.value['lats2'] === 'seated-rows-lats-focused'">
             Seated Rows Lats Focused
           </option>
-          <option value="chest-supported-dumbbell-lat-rows">
+          <option value="chest-supported-dumbbell-lat-rows" [disabled]="pullForm.value['lats2'] === 'chest-supported-dumbbell-lat-rows'">
             Chest Supported Dumbbell Lat Rows
           </option>
-          <option value="one-arm-cable-rows">One Arm Cable Rows</option>
-          <option value="lat-pulldowns">Lat Pulldowns</option>
+          <option value="one-arm-cable-rows" [disabled]="pullForm.value['lats2'] === 'one-arm-cable-rows'">One Arm Cable Rows</option>
+          <option value="lat-pulldowns" [disabled]="pullForm.value['lats2'] === 'lat-pulldowns'">Lat Pulldowns</option>
         </select>
         <button type="button" id="lat1" (click)="(onClickVideoHandler)">
           How To Do It Properly
         </button>
 
-        <select name="lats2" id="lats2">
-          <option value="none" hidden>Select an Exercise</option>
-          <option value="seated-rows-lats-focused">
+        <select name="lats2" id="lats2" formControlName="lats2">
+          <option value="" hidden>Select an Exercise</option>
+          <option value="seated-rows-lats-focused" [disabled]="pullForm.value['lats1'] === 'seated-rows-lats-focused'">
             Seated Rows Lats Focused
           </option>
-          <option value="chest-supported-dumbbell-lat-rows">
+          <option value="chest-supported-dumbbell-lat-rows" [disabled]="pullForm.value['lats1'] === 'chest-supported-dumbbell-lat-rows'">
             Chest Supported Dumbbell Lat Rows
           </option>
-          <option value="one-arm-cable-rows">One Arm Cable Rows</option>
-          <option value="lat-pulldowns">Lat Pulldowns</option>
+          <option value="one-arm-cable-rows" [disabled]="pullForm.value['lats1'] === 'one-arm-cable-rows'">One Arm Cable Rows</option>
+          <option value="lat-pulldowns" [disabled]="pullForm.value['lats1'] === 'lat-pulldowns'">Lat Pulldowns</option>
         </select>
         <button type="button" id="lat2" (click)="(onClickVideoHandler)">
           How To Do It Properly
         </button>
       </li>
+
       <li class="push-card">
         <label for="biceps1">BICEPS</label>
-        <select name="biceps1" id="biceps1">
-          <option value="none" hidden>Select an Exercise</option>
-          <option value="incline-dumbbell-curls">Incline Dumbbell Curls</option>
-          <option value="chinups">Chinups</option>
-          <option value="barbell-curls">Barbell Curls</option>
-          <option value="alt.-standing-dumbbell-curls">
+        <select name="biceps1" id="biceps1" formControlName="biceps1">
+          <option value="" hidden>Select an Exercise</option>
+          <option value="incline-dumbbell-curls" [disabled]="pullForm.value['biceps2'] === 'incline-dumbbell-curls'">Incline Dumbbell Curls</option>
+          <option value="chinups" [disabled]="pullForm.value['biceps2'] === 'chinups'">Chinups</option>
+          <option value="barbell-curls" [disabled]="pullForm.value['biceps2'] === 'barbell-curls'">Barbell Curls</option>
+          <option value="alt.-standing-dumbbell-curls" [disabled]="pullForm.value['biceps2'] === 'alt.-standing-dumbbell-curls'">
             Alt. Standing Dumbbell Curls
           </option>
         </select>
@@ -76,12 +77,12 @@
           How To Do It Properly
         </button>
 
-        <select name="biceps2" id="biceps2">
-          <option value="none" hidden>Select an Exercise</option>
-          <option value="incline-dumbbell-curls">Incline Dumbbell Curls</option>
-          <option value="chinups">Chinups</option>
-          <option value="barbell-curls">Barbell Curls</option>
-          <option value="alt.-standing-dumbbell-curls">
+        <select name="biceps2" id="biceps2" formControlName="biceps2">
+          <option value="" hidden>Select an Exercise</option>
+          <option value="incline-dumbbell-curls" [disabled]="pullForm.value['biceps1'] === 'incline-dumbbell-curls'">Incline Dumbbell Curls</option>
+          <option value="chinups" [disabled]="pullForm.value['biceps1'] === 'chinups'">Chinups</option>
+          <option value="barbell-curls" [disabled]="pullForm.value['biceps1'] === 'barbell-curls'">Barbell Curls</option>
+          <option value="alt.-standing-dumbbell-curls" [disabled]="pullForm.value['biceps1'] === 'alt.-standing-dumbbell-curls'">
             Alt. Standing Dumbbell Curls
           </option>
         </select>
@@ -89,10 +90,11 @@
           How To Do It Properly
         </button>
       </li>
+
       <li class="push-card">
         <label for="rear-delt">SHOULDER REAR DELT</label>
-        <select name="rear-delt" id="rear-delt">
-          <option value="none" hidden>Select an Exercise</option>
+        <select name="rear-delt" id="rear-delt" formControlName="rear-delt">
+          <option value="" hidden>Select an Exercise</option>
           <option value="double-arm-reverse-cable-fly">
             Double Arm Reverse Cable Fly
           </option>
@@ -110,5 +112,7 @@
       </li>
     </ul>
   </section>
-  <button class="btn-generate" (click)="generateHandler">GENERATE</button>
+  <button class="btn-generate" (click)="generateHandler(pullForm)">GENERATE</button>
 </form>
+
+{{ pullForm.value | json }}
