@@ -1,0 +1,23 @@
+#details .exercise {
+    text-align: center;
+    font-size: 19px;
+}
+
+p {
+    width: 90%;
+    margin: 25px 0px 0px 0px;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+p>strong {
+    float: left;
+    color: #c95454
+}
+
+p>span {
+    float: right;
+    font-size: 17px;
+
+}

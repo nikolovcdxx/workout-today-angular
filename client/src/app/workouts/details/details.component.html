@@ -1,1 +1,21 @@
-<p>details works!</p>
+<section id="details">
+  <div id="details-wrapper">
+    <p id="details-title">{{ ownerName }}'s Workout Details</p>
+    <div id="img-wrapper">
+      <img
+        *ngIf="workout?.type"
+        src="../../../assets/images/{{ workout?.type }}.gif"
+        alt="example1"
+      />
+    </div>
+    <div id="info-wrapper" *ngIf="workout?.type === 'push'">
+      <app-details-push [workout]="workout"></app-details-push>
+    </div>
+    <div id="info-wrapper" *ngIf="workout?.type === 'pull'">
+      <app-details-pull [workout]="workout"></app-details-pull>
+    </div>
+    <div id="info-wrapper" *ngIf="workout?.type === 'legs'">
+      <app-details-legs [workout]="workout"></app-details-legs>
+    </div>
+  </div>
+</section>

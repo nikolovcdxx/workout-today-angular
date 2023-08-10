@@ -5,9 +5,12 @@ import { CatalogItemComponent } from './catalog-item/catalog-item.component';
 import { WorkoutRoutingModule } from './workout-routing.module';
 import { MyWorkoutComponent } from './my-workout/my-workout.component';
 import { DetailsComponent } from './details/details.component';
+import { DetailsPushComponent } from './details/details-push/details-push.component';
+import { DetailsPullComponent } from './details/details-pull/details-pull.component';
+import { DetailsLegsComponent } from './details/details-legs/details-legs.component';
 
 @NgModule({
-  declarations: [CatalogComponent, CatalogItemComponent, MyWorkoutComponent, DetailsComponent],
+  declarations: [CatalogComponent, CatalogItemComponent, MyWorkoutComponent, DetailsComponent, DetailsPushComponent, DetailsPullComponent, DetailsLegsComponent],
   imports: [CommonModule, WorkoutRoutingModule],
   exports: [CatalogComponent],
 })

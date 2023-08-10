@@ -17,21 +17,22 @@ const { apiUrl } = environment;
 export class TokenInterceptor implements HttpInterceptor {
   constructor(private router: Router, private authService: AuthService) {}
 
-  isUser: string | null = localStorage.getItem('auth');
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    if (req.url.startsWith('/api') && this.isUser === null) {
+    let isUser: string | null = localStorage.getItem('auth');
+   
+    if (req.url.startsWith('/api') && isUser === null) {
       req = req.clone({
         url: req.url.replace('/api', apiUrl),
       });
-    } else if (req.url.startsWith('/api') && this.isUser !== null) {
+    } else if (req.url.startsWith('/api') && isUser !== null) {
       req = req.clone({
         url: req.url.replace('/api', apiUrl),
         setHeaders: {
-          'X-Authorization': `${JSON.parse(this.isUser).accessToken}`,
+          'X-Authorization': `${JSON.parse(isUser).accessToken}`,
           'Content-Type': 'application/json',
         },
       });
