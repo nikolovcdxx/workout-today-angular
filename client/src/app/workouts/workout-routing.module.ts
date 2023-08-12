@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CatalogComponent } from './catalog/catalog.component';
 import { MyWorkoutComponent } from './my-workout/my-workout.component';
 import { DetailsComponent } from './details/details.component';
+import { EditComponent } from './edit/edit.component';
 // import { AuthActivate } from '../core/guards/auth.activate';
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
     path: 'details/:workoutId',
     component: DetailsComponent
   },
+  {
+    path: 'edit/:workoutId',
+    component: EditComponent
+  }
 ];
 
 @NgModule({

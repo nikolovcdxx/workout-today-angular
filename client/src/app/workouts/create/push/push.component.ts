@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WorkoutCreationService } from '../workout-creation.service';
-import { Workout } from 'src/app/types/workout';
 import { WorkoutService } from '../../workout.service';
 
 @Component({

@@ -21,7 +21,7 @@ const routes: Routes = [
     //   showAfterAuth: false
     // }
   },
-  
+  { path: 'logout', redirectTo: '/auth/login' },
 ];
 
 @NgModule({

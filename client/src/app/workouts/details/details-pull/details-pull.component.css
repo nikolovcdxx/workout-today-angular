@@ -1,9 +1,12 @@
-#details .exercise {
-    text-align: center;
-    font-size: 19px;
+#info-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200%;
+    margin-left: -70px;
+    height: 250px;
 }
 
-p {
+#info-wrapper>p {
     width: 90%;
     margin: 25px 0px 0px 0px;
     height: auto;
@@ -11,13 +14,17 @@ p {
     font-weight: bold;
 }
 
-p>strong {
+#info-wrapper>p>strong {
     float: left;
     color: #c95454
 }
 
-p>span {
+#info-wrapper>p>span {
     float: right;
-    font-size: 17px;
+}
 
+
+.exercise {
+    text-align: center;
+    font-size: 19px;
 }

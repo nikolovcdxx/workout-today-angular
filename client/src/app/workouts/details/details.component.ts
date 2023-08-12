@@ -18,7 +18,8 @@ export class DetailsComponent implements OnInit {
   workout: Workout | undefined;
 
   isLiked: boolean = false;
-  userId: string = JSON.parse(localStorage.getItem('auth')!)._id;
+  isUser: string | null = localStorage.getItem('auth');
+  userId: string = '';
 
   ngOnInit(): void {
     this.getWorkout();
@@ -37,8 +38,10 @@ export class DetailsComponent implements OnInit {
     let workoutId: string = this.activatedRoute.snapshot.params['workoutId'];
     this.workoutService.getOne(workoutId).subscribe((workout) => {
       this.workout = workout;
-      this.isLiked = workout.likedBy.includes(this.userId) ? true : false;
-      console.log(this.workout);
+      this.isUser === null
+        ? (this.isLiked = true)
+        : (this.userId = JSON.parse(this.isUser)._id);
+      this.isLiked = workout.likedBy.includes(this.userId);
     });
   }
 

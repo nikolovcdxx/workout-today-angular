@@ -9,7 +9,7 @@
     <div class="profile">
       <span> Welcome, {{ username }} </span>
       <a routerLink="workouts/my-workout"> My Workout </a>
-      <a (click)="logout()">Logout</a>
+      <a routerLink="/auth/logout" (click)="logout()">Logout</a>
     </div>
   </div>
   <div *ngIf="!isLoggedIn" class="guest">

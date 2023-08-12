@@ -1,115 +1,137 @@
 #details-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: white;
-    margin: 50px auto;
-    min-height: 400px;
-    max-width: 45%;
-    border: 2px ridge rgb(210, 208, 208);
-    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
-    box-shadow: 10px 10px rgba(0, 0, 0, .15);
-  }
-  
-  #img-wrapper {
-    max-width: 35%;
-  }
-  
-  #img-wrapper img {
-    width: 100%;
-    min-height: 250px;
-    display: block;
-  }
-  
-  
-  
-  #info-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    width: 55%;
-    margin-left: 70px;
-    height: 250px;
-  }
-  
-  #details h4 {
-    text-align: center;
-  }
-  
-  
-  #details span {
-    font-size: 17px;
-  }
-  
-  #likes {
-    width: 95%;
-    text-align: center;
-    margin: 80px 0px 8px 0px;
-    font-weight: bold;
-    font-size: 21px;
-    color: #3030fa
-  }
-  
-  #likes span {
-    font-size: 19px
-  }
-  
-  #action-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 35px;
-    margin-bottom: 25px;
-  }
-  
-  #action-buttons a {
-    text-decoration: none;
-    margin: auto 50px;
-    font-size: 22px;
-    width: 130px;
-    padding: 10px;
-    text-align: center;
-    color: black;
-    font-weight: 500;
-    background: #CBF6FF;
-    font-style: italic;
-  }
-  
-  #action-buttons a:hover {
-    transform: rotateX(15deg);
-    box-shadow: 0 15px 15px #7db9d7;
-  }
-  
-  #details-title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 29px;
-    width: 100%;
-    font-style: italic;
-  }
-  
-  .details-loading {
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
-  }
-  
-  #action-buttons .btn-details {
-    border: none;
-    margin: auto 50px;
-    font-size: 22px;
-    width: 130px;
-    padding: 10px;
-    text-align: center;
-    color: black;
-    font-weight: 500;
-    background: #CBF6FF;
-    font-style: italic;
-    font-family: auto;
-  }
-  
-  #action-buttons .btn-details:hover {
-    transform: rotateX(15deg);
-    box-shadow: 0 15px 15px #7db9d7;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  margin: 50px auto;
+  min-height: 400px;
+  max-width: 45%;
+  border: 2px ridge rgb(210, 208, 208);
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+  box-shadow: 10px 10px rgba(0, 0, 0, .15);
+}
+
+#img-wrapper {
+  max-width: 35%;
+}
+
+#img-wrapper img {
+  width: 100%;
+  min-height: 250px;
+  display: block;
+}
+
+#details h4 {
+  text-align: center;
+}
+
+#details span {
+  font-size: 17px;
+}
+
+#likes {
+  width: 95%;
+  text-align: center;
+  margin: 80px 0px 8px 0px;
+  font-weight: bold;
+  font-size: 21px;
+  color: #3030fa
+}
+
+#likes span {
+  font-size: 19px
+}
+
+#action-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+
+#action-buttons a {
+  text-decoration: none;
+  margin: auto 50px;
+  font-size: 22px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  background: #CBF6FF;
+  font-style: italic;
+}
+
+#action-buttons a:hover {
+  transform: rotateX(15deg);
+  box-shadow: 0 15px 15px #7db9d7;
+}
+
+#details-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 29px;
+  width: 100%;
+  font-style: italic;
+}
+
+.details-loading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#action-buttons .btn-details {
+  border: none;
+  margin: auto 50px;
+  font-size: 22px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  background: #CBF6FF;
+  font-style: italic;
+  font-family: auto;
+}
+
+#action-buttons .btn-details:hover {
+  transform: rotateX(15deg);
+  box-shadow: 0 15px 15px #7db9d7;
+  cursor: pointer;
+}
+
+.align-center {
+  text-align: center;
+  overflow: hidden;
+}
+
+.item {
+  box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.item p {
+  margin-bottom: 16px;
+}
+
+.action {
+  display: inline-block;
+  border: none;
+  padding: 8px 16px;
+  margin: 4px 8px;
+  text-decoration: none;
+  background-color: #7d367d;
+  color: white;
+}
+
+.action:hover {
+  background-color: #ba5eba;
+  cursor: pointer;
+  color: white;
+}

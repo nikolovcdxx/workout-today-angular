@@ -1,10 +1,34 @@
-<div class="item pad-large align-center no-workout">
-    <p>
-        No workout yet!
-    </p>
-    <div>
-        <a class="action" routerLink="/workouts/create">
-            Create Now
-        </a>
-    </div>
+<div *ngIf="!workout" class="item pad-large align-center no-workout">
+  <p>No workout yet!</p>
+  <div>
+    <a class="action" routerLink="/workouts/create"> Create Now </a>
+  </div>
 </div>
+
+<section *ngIf="workout" id="details">
+  <div id="details-wrapper">
+    <p id="details-title">My Workout</p>
+    <div id="img-wrapper">
+      <img src="../../../assets/images/{{ workout.type }}.gif" alt="example1" />
+      <div *ngIf="workout.type === 'push'">
+        <app-details-push [workout]="workout" />
+      </div>
+      <div *ngIf="workout.type === 'pull'">
+        <app-details-pull [workout]="workout" />
+      </div>
+      <div *ngIf="workout.type === 'legs'">
+        <app-details-legs [workout]="workout" />
+      </div>
+
+      <div id="likes">
+        Likes: <span id="likes-count">{{ workout.likedBy.length }}</span>
+      </div>
+      <div id="action-buttons">
+        <a routerLink="/workouts/edit/{{ workout._id }}"> Edit </a>
+        <button class="btn-details" (click)="workoutDeleteHandler(workout._id)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
