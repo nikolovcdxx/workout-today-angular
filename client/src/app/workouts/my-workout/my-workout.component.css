@@ -1,0 +1,30 @@
+.align-center {
+    text-align: center;
+    overflow: hidden;
+}
+
+.item {
+    box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.item p {
+    margin-bottom: 16px;
+}
+
+.action {
+    display: inline-block;
+    border: none;
+    padding: 8px 16px;
+    margin: 4px 8px;
+    text-decoration: none;
+    background-color: #7d367d;
+    color: white;
+}
+
+.action:hover {
+    background-color: #ba5eba;
+    cursor: pointer;
+    color: white;
+}

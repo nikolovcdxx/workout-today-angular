@@ -20,7 +20,7 @@
     </div></span
   >
 
-  <a *ngIf="currentUser" class="action" routerLink="my-workout">
+  <a *ngIf="currentUser" class="action"  routerLink="my-workout" [state]="{id: workout?._id}">
     See details
   </a>
   <a *ngIf="!currentUser" class="action" routerLink="details/{{workout?._id}}">

@@ -17,5 +17,11 @@
     <div id="info-wrapper" *ngIf="workout?.type === 'legs'">
       <app-details-legs [workout]="workout"></app-details-legs>
     </div>
+    <div id="likes">
+      Likes: <span id="likes-count">{{workout?.likedBy?.length}}</span>
+    </div>
+    <div id="action-buttons" *ngIf="!isLiked">
+      <button class="btn-details" (click)="likeHandler()">Like</button>
+    </div>
   </div>
 </section>

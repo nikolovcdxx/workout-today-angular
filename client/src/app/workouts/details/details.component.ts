@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WorkoutService } from '../workout.service';
 import { Workout } from 'src/app/types/workout';
 
@@ -11,10 +11,14 @@ import { Workout } from 'src/app/types/workout';
 export class DetailsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
-    private workoutService: WorkoutService
+    private workoutService: WorkoutService,
+    private router: Router
   ) {}
 
   workout: Workout | undefined;
+
+  isLiked: boolean = false;
+  userId: string = JSON.parse(localStorage.getItem('auth')!)._id;
 
   ngOnInit(): void {
     this.getWorkout();
@@ -33,7 +37,18 @@ export class DetailsComponent implements OnInit {
     let workoutId: string = this.activatedRoute.snapshot.params['workoutId'];
     this.workoutService.getOne(workoutId).subscribe((workout) => {
       this.workout = workout;
+      this.isLiked = workout.likedBy.includes(this.userId) ? true : false;
       console.log(this.workout);
     });
+  }
+
+  likeHandler() {
+    if (this.workout) {
+      this.workoutService.like(this.workout._id, this.userId).subscribe(() => {
+        this.isLiked = true;
+        this.workout?.likedBy.push(this.userId);
+      });
+      this.router.navigate([`/workouts/details/${this.workout._id}`]);
+    }
   }
 }

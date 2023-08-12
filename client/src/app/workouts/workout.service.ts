@@ -31,4 +31,8 @@ export class WorkoutService {
   remove(workoutId: string) {
     return this.http.delete<Workout>(`/api/data/workouts/${workoutId}`);
   }
+
+  like(workoutId: string, userId: string) {
+    return this.http.post(`/api/data/workouts/${workoutId}/like`, {userId});
+  }
 }
