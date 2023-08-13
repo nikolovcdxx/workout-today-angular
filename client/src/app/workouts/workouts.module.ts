@@ -9,10 +9,26 @@ import { DetailsPushComponent } from './details/details-push/details-push.compon
 import { DetailsPullComponent } from './details/details-pull/details-pull.component';
 import { DetailsLegsComponent } from './details/details-legs/details-legs.component';
 import { EditComponent } from './edit/edit.component';
+import { EditPushComponent } from './edit/edit-push/edit-push.component';
+import { EditPullComponent } from './edit/edit-pull/edit-pull.component';
+import { EditLegsComponent } from './edit/edit-legs/edit-legs.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [CatalogComponent, CatalogItemComponent, MyWorkoutComponent, DetailsComponent, DetailsPushComponent, DetailsPullComponent, DetailsLegsComponent, EditComponent],
-  imports: [CommonModule, WorkoutRoutingModule],
+  declarations: [
+    CatalogComponent,
+    CatalogItemComponent,
+    MyWorkoutComponent,
+    DetailsComponent,
+    DetailsPushComponent,
+    DetailsPullComponent,
+    DetailsLegsComponent,
+    EditComponent,
+    EditPushComponent,
+    EditPullComponent,
+    EditLegsComponent,
+  ],
+  imports: [CommonModule, WorkoutRoutingModule, ReactiveFormsModule],
   exports: [CatalogComponent],
 })
 export class WorkoutsModule {}

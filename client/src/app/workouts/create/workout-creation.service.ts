@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { WorkoutService } from '../workout.service';
 import { Router } from '@angular/router';
-import { Workout } from 'src/app/types/workout';
 
 @Injectable({
   providedIn: 'root',

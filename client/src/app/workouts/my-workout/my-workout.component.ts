@@ -30,12 +30,15 @@ export class MyWorkoutComponent implements OnInit {
     if (workoutId) {
       this.workoutService.getOne(workoutId).subscribe((workout) => {
         this.workout = workout;
+        console.log(this.workout);
+        
       });
     }
 
     if (userId) {
       this.workoutService.getAll().subscribe((workouts) => {
         this.workout = workouts.find((x) => x.owner === userId);
+        console.log(this.workout);
         typeof this.workout?._id === 'string'
           ? (this.workoutId = this.workout._id)
           : '';

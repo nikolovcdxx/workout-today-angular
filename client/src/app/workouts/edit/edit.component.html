@@ -1,1 +1,4 @@
-<p>edit works!</p>
+  <app-edit-push *ngIf="workout?.type === 'push'" ></app-edit-push>
+  <app-edit-pull *ngIf="workout?.type === 'pull'"></app-edit-pull>
+  <app-edit-legs *ngIf="workout?.type === 'legs'" [exercises]="workout?.exercises"></app-edit-legs>
+

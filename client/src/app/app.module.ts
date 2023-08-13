@@ -9,9 +9,15 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { appInterceptorProvider } from './token.interceptor';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AuthenticateComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AuthenticateComponent,
+    NotFoundComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -24,7 +24,7 @@
         Likes: <span id="likes-count">{{ workout.likedBy.length }}</span>
       </div>
       <div id="action-buttons">
-        <a routerLink="/workouts/edit/{{ workout._id }}"> Edit </a>
+        <a routerLink="/workouts/edit/{{ workout._id }}" [state]="{workout}"> Edit </a>
         <button class="btn-details" (click)="workoutDeleteHandler(workout._id)">
           Delete
         </button>
