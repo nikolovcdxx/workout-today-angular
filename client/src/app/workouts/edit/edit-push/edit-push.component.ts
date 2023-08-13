@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./edit-push.component.css']
 })
 export class EditPushComponent {
-  @Input() exercises = {}
   
+
   onClickVideoHandler() {
     //
   }
