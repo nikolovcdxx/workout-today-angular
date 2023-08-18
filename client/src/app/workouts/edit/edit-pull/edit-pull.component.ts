@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-edit-pull',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./edit-pull.component.css']
 })
 export class EditPullComponent {
+  @Input() workout: any;
 
 }

@@ -1,0 +1,70 @@
+<form [formGroup]="pushForm" (ngSubmit)="editHandler">
+    <section id="dashboard">
+        <h2 class='card-title'>PUSH EXERCISES</h2>
+        <ul class="push-card-wrapper">
+            <li class="push-card">
+                <label for="upper-chest">UPPER CHEST</label>
+                <select name="upper-chest" id="upper-chest" formControlName="upper-chest">
+                    <option value="30°-incline-dumbbell-press">30° Incline Dumbbell Press</option>
+                    <option value="low-to-high-cable-fly">Low To High Cable Fly</option>
+                    <option value="incline-chest-press-machine">Incline Chest Press Machine</option>
+                </select>
+                <button type="button" id="up-chest" (click)="onClickVideoHandler">How To Do It Properly</button>
+
+                <label for="middle-chest">MIDDLE CHEST</label>
+                <select name="middle-chest" id="middle-chest" formControlName="middle-chest">
+                    <option value="barbell-bench-press">Barbell Bench Press</option>
+                    <option value="standing-cable-fly">Standing Cable Fly</option>
+                    <option value="pec-deck-machine">Pec Deck Machine</option>
+                </select>
+                <button type="button" id="mid-chest" (click)="onClickVideoHandler">How To Do It Properly</button>
+
+                <label for="lower-chest">LOWER CHEST</label>
+                <select name="lower-chest" id="lower-chest" formControlName="lower-chest">
+                    <option value="slight-decline-dumbbell-press">Slight Decline Dumbbell Press</option>
+                    <option value="high-to-low-cable-fly">High To Low Cable Fly</option>
+                    <option value="chest-dips">Chest Dips</option>
+                </select>
+                <button type="button" id="low-chest" (click)="onClickVideoHandler">How To Do It Properly</button>
+            </li>
+            <li class="push-card">
+                <label for="triceps1">TRICEPS</label>
+                <select name="triceps1" id="triceps1" formControlName="triceps1">
+                    <option value="lying-tricep-extension" [disabled]="pushForm.value.triceps2 === 'lying-tricep-extension'">Lying Tricep Extension</option>
+                    <option value="incline-dumbbell-powerbombs" [disabled]="pushForm.value.triceps2 === 'incline-dumbbell-powerbombs'">Incline Dumbbell Powerbombs</option>
+                    <option value="rocking-pushdowns" [disabled]="pushForm.value.triceps2 === 'rocking-pushdowns'">Rocking Pushdowns</option>
+                    <option value="close-grip-bench-press" [disabled]="pushForm.value.triceps2 === 'close-grip-bench-press'">Close Grip Bench Press</option>
+                    <option value="dumbbell-kickbacks" [disabled]="pushForm.value.triceps2 === 'dumbbell-kickbacks'">Dumbbell Kickbacks</option>
+                </select>
+                <button type="button" id="tri1" (click)="onClickVideoHandler">How To Do It Properly</button>
+
+                <select name="triceps2" id="triceps2" formControlName="triceps2">
+                    <option value="lying-tricep-extension" [disabled]="pushForm.value.triceps1 === 'lying-tricep-extension'">Lying Tricep Extension</option>
+                    <option value="incline-dumbbell-powerbombs" [disabled]="pushForm.value.triceps1 === 'incline-dumbbell-powerbombs'">Incline Dumbbell Powerbombs</option>
+                    <option value="rocking-pushdowns" [disabled]="pushForm.value.triceps1 === 'rocking-pushdowns'">Rocking Pushdowns</option>
+                    <option value="close-grip-bench-press" [disabled]="pushForm.value.triceps1 === 'close-grip-bench-press'">Close Grip Bench Press</option>
+                    <option value="dumbbell-kickbacks" [disabled]="pushForm.value.triceps1 === 'dumbbell-kickbacks'">Dumbbell Kickbacks</option>
+                </select>
+                <button type="button" id="tri2" (click)="onClickVideoHandler">How To Do It Properly</button>
+            </li>
+            <li class="push-card">
+                <label for="front-delt">SHOULDER FRONT DELT</label>
+                <select name="front-delt" id="front-delt"  formControlName="front-delt">
+                    <option value="seated-dumbbell-shoulder-press">Seated Dumbbell Shoulder Press</option>
+                    <option value="dumbbell-front-raises">Dumbbell Front Raises</option>
+                    <option value="shoulder-press-machine">Shoulder Press Machine</option>
+                </select>
+                <button type="button" id="f-delt" (click)="onClickVideoHandler">How To Do It Properly</button>
+
+                <label for="side-delt">SHOULDER SIDE DELT</label>
+                <select name="side-delt" id="side-delt" formControlName="side-delt">
+                    <option value="dumbbell-lateral-raise">Dumbbell Lateral Raise</option>
+                    <option value="lying-incline-lateral-raise">Lying Incline Lateral Raise</option>
+                    <option value="cable-lateral-raise">Cable Lateral Raise</option>
+                </select>
+                <button type="button" id="s-delt" (click)="onClickVideoHandler">How To Do It Properly</button>
+            </li>
+        </ul>
+    </section>
+    <button class="btn-generate" (click)="editHandler(pushForm)">EDIT</button>
+</form>

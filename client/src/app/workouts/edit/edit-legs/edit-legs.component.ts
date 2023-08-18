@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { WorkoutService } from '../../workout.service';
+import { Router } from '@angular/router';
+import { Workout } from 'src/app/types/workout';
 
 @Component({
   selector: 'app-edit-legs',
@@ -7,18 +10,22 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./edit-legs.component.css'],
 })
 export class EditLegsComponent implements OnInit {
-  @Input() exercises: any;
+  @Input() workout: Workout | undefined;;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private workoutService: WorkoutService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.legsForm.setValue({
-      quadriceps1: this.exercises.quadriceps1,
-      quadriceps2: this.exercises.quadriceps2,
-      hamstrings: this.exercises.hamstrings,
-      glutes1: this.exercises.glutes1,
-      glutes2: this.exercises.glutes2,
-      calves: this.exercises.calves,
+      quadriceps1: this.workout?.exercises.quadriceps1,
+      quadriceps2: this.workout?.exercises.quadriceps2,
+      hamstrings: this.workout?.exercises.hamstrings,
+      glutes1: this.workout?.exercises.glutes1,
+      glutes2: this.workout?.exercises.glutes2,
+      calves: this.workout?.exercises.calves,
     });
   }
 
@@ -33,6 +40,14 @@ export class EditLegsComponent implements OnInit {
 
   editHandler(legsForm: FormGroup) {
     //
+    this.workoutService
+      .edit(
+        this.workout!._id,
+        this.workout!.type,
+        legsForm.value,
+        this.workout!.ownerName
+      )
+      .subscribe(() => this.router.navigate(['/workouts/my-workout']));
   }
 
   onClickVideoHandler() {
