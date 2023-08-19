@@ -22,7 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     let isUser: string | null = localStorage.getItem('auth');
-   
+
     if (req.url.startsWith('/api') && isUser === null) {
       req = req.clone({
         url: req.url.replace('/api', apiUrl),
@@ -39,10 +39,13 @@ export class TokenInterceptor implements HttpInterceptor {
 
     return next.handle(req).pipe(
       catchError((err) => {
-        this.errorService.setError(err);
+        if (err.error.msg) {
+          this.errorService.err$$.next(err.error.msg);
+        } else if (err.message) {
+          this.errorService.err$$.next(err.message);
+        }
         // this.router.navigate(['/error'])
 
-        
         // if (err.status === 401) {
         //   this.router.navigate(['/auth/login']);
         // } else {

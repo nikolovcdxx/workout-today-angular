@@ -7,6 +7,6 @@ import { ErrorComponent } from './error/error.component';
 @NgModule({
   declarations: [NavigationComponent, ErrorComponent],
   imports: [CommonModule, RouterModule],
-  exports: [NavigationComponent],
+  exports: [NavigationComponent, ErrorComponent],
 })
 export class CoreModule {}

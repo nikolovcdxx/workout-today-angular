@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ErrorService } from './error.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-error',
@@ -7,15 +8,15 @@ import { ErrorService } from './error.service';
   styleUrls: ['./error.component.css'],
 })
 export class ErrorComponent implements OnInit {
-  apiError$ = this.errorService.apiError$$.asObservable();
-
-  errorMsg = '';
+  errorMsg!: Observable<string>;
 
   constructor(private errorService: ErrorService) {}
 
   ngOnInit(): void {
-    this.apiError$.subscribe((result: any) => {
-      this.errorMsg = result.error.msg;
-    })
+    this.errorMsg = this.errorService.error$;
+
+    setInterval(() => {
+      this.errorService.err$$.next('');
+    }, 5000);
   }
 }

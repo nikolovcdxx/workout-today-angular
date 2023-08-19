@@ -31,12 +31,14 @@ export class AuthService implements OnDestroy {
   }
 
   login(username: string, password: string) {
-    return this.http.post<User>('/api/users/login', { username, password }).pipe(
-      tap((user) => {
-        this.user$$.next(user);
-        localStorage.setItem(this.USER_KEY, JSON.stringify(user));
-      })
-    );
+    return this.http
+      .post<User>('/api/users/login', { username, password })
+      .pipe(
+        tap((user) => {
+          this.user$$.next(user);
+          localStorage.setItem(this.USER_KEY, JSON.stringify(user));
+        })
+      );
   }
 
   register(username: string, password: string, repass: string) {
@@ -57,8 +59,9 @@ export class AuthService implements OnDestroy {
   logout() {
     return this.http.get<User>('/api/users/logout', {}).pipe(
       tap(() => {
+        debugger
         this.user$$.next(undefined);
-        this.isUser= null;
+        this.isUser = null;
         localStorage.clear();
       })
     );
