@@ -30,7 +30,7 @@ router.post('/login', isGuest(), async (req, res) => {
 
 router.get('/logout', (req, res) => {
     logout(req.user?.token);
-    res.status(204).json({msg: 'Successfully logged out'});
+    res.status(204).end();
 });
 
 module.exports = router;

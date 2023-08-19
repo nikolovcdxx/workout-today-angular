@@ -56,15 +56,11 @@ export class AuthService implements OnDestroy {
       );
   }
 
-  logout() {
-    return this.http.get<User>('/api/users/logout', {}).pipe(
-      tap(() => {
-        debugger
-        this.user$$.next(undefined);
-        this.isUser = null;
-        localStorage.clear();
-      })
-    );
+  logout(): void {
+    this.http.get<User>('/api/users/logout', {});
+    this.user$$.next(undefined);
+    this.isUser = null;
+    localStorage.clear();
   }
 
   getUser() {

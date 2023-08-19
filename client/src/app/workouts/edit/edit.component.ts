@@ -16,7 +16,9 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.workout = history.state.workout;
-    console.log(this.workout);
+    if (this.workout === undefined) {
+      this.router.navigate(['not-found'])
+    }
     
   }
 

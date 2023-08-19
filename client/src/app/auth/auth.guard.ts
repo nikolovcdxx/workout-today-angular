@@ -39,14 +39,42 @@ export class AuthGuard implements CanActivate {
       }
     }
 
-    if (route.routeConfig?.path === 'workouts/my-workout') {
+    if (route.routeConfig?.path === 'my-workout') {
       this.isLogged = !!localStorage.getItem('auth');
       if (!this.isLogged) {
         this.router.navigate(['/auth/login']);
       }
     }
 
-    if (route.routeConfig?.path === 'workouts/edit/:id') {
+    if (route.routeConfig?.path === 'edit/:id') {
+      this.isLogged = !!localStorage.getItem('auth');
+      if (!this.isLogged) {
+        this.router.navigate(['/auth/login']);
+      }
+    }
+
+    if (route.routeConfig?.path === 'create') {
+      this.isLogged = !!localStorage.getItem('auth');
+      if (!this.isLogged) {
+        this.router.navigate(['/auth/login']);
+      }
+    }
+
+    if (route.routeConfig?.path === 'push') {
+      this.isLogged = !!localStorage.getItem('auth');
+      if (!this.isLogged) {
+        this.router.navigate(['/auth/login']);
+      }
+    }
+
+    if (route.routeConfig?.path === 'pull') {
+      this.isLogged = !!localStorage.getItem('auth');
+      if (!this.isLogged) {
+        this.router.navigate(['/auth/login']);
+      }
+    }
+
+    if (route.routeConfig?.path === 'legs') {
       this.isLogged = !!localStorage.getItem('auth');
       if (!this.isLogged) {
         this.router.navigate(['/auth/login']);

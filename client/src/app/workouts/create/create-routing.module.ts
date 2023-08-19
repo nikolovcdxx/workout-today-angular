@@ -4,27 +4,28 @@ import { CreateSelectionComponent } from './create-selection/create-selection.co
 import { PushComponent } from './push/push.component';
 import { PullComponent } from './pull/pull.component';
 import { LegsComponent } from './legs/legs.component';
-// import { AuthActivate } from '../core/guards/auth.activate';
+import { AuthGuard } from 'src/app/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: CreateSelectionComponent,
-    // canActivate: [AuthActivate],
-    // data: {
-    //   showAfterAuth: false
-    // }
+    canActivate: [AuthGuard],
+    
   },
   {
     path: 'push',
     component: PushComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'pull',
     component: PullComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'legs',
+    canActivate: [AuthGuard],
     component: LegsComponent,
   },
 ];

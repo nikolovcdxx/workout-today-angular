@@ -4,20 +4,19 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { MyWorkoutComponent } from './my-workout/my-workout.component';
 import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
+import { AuthGuard } from '../auth/auth.guard';
 // import { AuthActivate } from '../core/guards/auth.activate';
 
 const routes: Routes = [
   {
     path: '',
     component: CatalogComponent,
-    // canActivate: [AuthActivate],
-    // data: {
-    //   showAfterAuth: false
-    // }
   },
   {
     path: 'my-workout',
     component: MyWorkoutComponent,
+    canActivate: [AuthGuard],
+
   },
   {
     path: 'create',
@@ -30,7 +29,8 @@ const routes: Routes = [
   },
   {
     path: 'edit/:workoutId',
-    component: EditComponent
+    component: EditComponent,
+    canActivate: [AuthGuard],
   }
 ];
 
