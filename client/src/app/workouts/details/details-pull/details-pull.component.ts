@@ -9,7 +9,7 @@ import { DetailsService } from '../details.service';
 })
 export class DetailsPullComponent implements OnInit {
   @Input() workout: Workout | undefined;
-  constructor(private detailsService: DetailsService) {}
+  constructor(private detailsService: DetailsService) {} 
 
   upperBack1: string | undefined = undefined;
   upperBack2: string | undefined = undefined;
@@ -20,7 +20,7 @@ export class DetailsPullComponent implements OnInit {
   rearDelt: string | undefined = undefined;
 
   ngOnInit(): void {
-    this.upperBack1 = this.detailsService?.capitalize(
+    this.upperBack1 = this.detailsService.capitalize(
       this.workout?.exercises['upper-back1']
     );
     this.upperBack2 = this.detailsService.capitalize(

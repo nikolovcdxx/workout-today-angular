@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DetailsService } from '../details.service';
 import { Workout } from 'src/app/types/workout';
 
@@ -7,7 +7,7 @@ import { Workout } from 'src/app/types/workout';
   templateUrl: './details-legs.component.html',
   styleUrls: ['./details-legs.component.css']
 })
-export class DetailsLegsComponent {
+export class DetailsLegsComponent implements OnInit {
   @Input() workout: Workout | undefined;
   constructor(private detailsService: DetailsService) {}
 
@@ -19,7 +19,8 @@ export class DetailsLegsComponent {
   calves: string | undefined = undefined;
 
   ngOnInit(): void {
-    this.quadriceps1 = this.detailsService?.capitalize(
+    
+    this.quadriceps1 = this.detailsService.capitalize(
       this.workout?.exercises['quadriceps1']
     );
     this.quadriceps2 = this.detailsService.capitalize(

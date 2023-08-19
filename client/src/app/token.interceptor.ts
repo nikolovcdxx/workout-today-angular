@@ -9,14 +9,13 @@ import { Injectable, Provider } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, catchError } from 'rxjs';
 import { environment } from './environments/environment';
-import { AuthService } from './auth/auth.service';
+import { ErrorService } from './core/error/error.service';
 
 const { apiUrl } = environment;
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(private router: Router, private authService: AuthService) {}
-
+  constructor(private router: Router, private errorService: ErrorService) {}
 
   intercept(
     req: HttpRequest<any>,
@@ -40,6 +39,10 @@ export class TokenInterceptor implements HttpInterceptor {
 
     return next.handle(req).pipe(
       catchError((err) => {
+        this.errorService.setError(err);
+        // this.router.navigate(['/error'])
+
+        
         // if (err.status === 401) {
         //   this.router.navigate(['/auth/login']);
         // } else {
