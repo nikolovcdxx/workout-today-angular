@@ -55,5 +55,18 @@ Download or clone the repository from our version control system (e.g., GitHub).
 **2. Navigate to 'server' and 'client' Folders:**
 Open a terminal window and navigate to both the 'server' and 'client' folders separately using the **\`cd`** command:
 > `cd` path/to/fitness-app/server 
-> ```cd` path/to/fitness-app/client``
+>
+> `cd` path/to/fitness-app/client
+
+**3. Install Dependencies:**
+In both the 'server' and 'client' folders, install the required dependencies using the following command:
+> npm install
+
+**4. Start the Server:**
+In the 'server' folder, initiate the server using the following command:
+> npm run start
+
+The backend server will start and listen on port **http://localhost:3005**.
+
+
 
