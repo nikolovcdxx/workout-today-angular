@@ -68,8 +68,48 @@ In the 'server' folder, initiate the server using the following command:
 
 The backend server will start and listen on port **http://localhost:3005**.
 
-```sh
-npm run start
+**5. Serve the Client:**
+In the 'client' folder, start serving the Angular application using the Angular CLI:
+> ng serve
+
+**6. Access the Application:**
+Once the server and client are up and running, you can access the application by opening your web browser and navigating to **http://localhost:4200**.
+
+**7.MongoDB Compass:**
+Ensure that you have MongoDB Compass installed on your computer. This tool will allow you to interact with the backend MongoDB database used by the application.
+
+With these steps completed, you're all set to explore the world of workout splits and experience the power of push, pull, and leg workouts through our fitness application. Remember to tailor your workout preferences as needed and enjoy the journey towards your fitness goals!
+
+### 3. User Interactions: Tabs and Features
+
+Our fitness application offers a variety of tabs and features to cater to both guest users and registered members. Let's explore these tabs and functionalities in more detail:
+
+**Guest User Interaction:**
+
+**1. All Workouts:**
+In the "All Workouts" tab, guest users have the opportunity to browse through workout routines shared by other users for the current day. They can view details about these workouts, including exercise lists. Additionally, they can express their appreciation by liking the workouts that resonate with them.
+
+**2.Login and Register:**
+Guest users have the option to log in to an existing account or register a new account to unlock the full potential of the application's features.
+
+**Registered Member Interaction:**
+
+**1.Create Workout:**
+Once logged in, members can access the "Create Workout" tab, which allows them to design personalized workout routines. They begin by choosing between push, pull, and leg workouts. For each chosen category, members can further tailor their routine by selecting specific muscle groups. This intuitive process ensures that workouts align with individual fitness goals.
+
+**2.My Workout:**
+The "My Workout" tab provides a dedicated space for members to manage their workout routine. Here, members can view the workout they've created, make edits, or delete the routine altogether. It's important to note that members can only have one active workout at a time. Thus, before creating a new routine, they must delete the existing one.
+
+**Workflow and Interaction Summary:**
+
+- **Create Workout Workflow:** Members start by selecting a workout type (push, pull, leg) and then proceed to customize the routine by choosing muscle groups. The application generates a tailored workout that aligns with their choices.
+
+- **My Workout Workflow:** Members can access and manage their active workout routine in the "My Workout" tab. They can make edits, delete the routine, and maintain a focused approach to their fitness journey.
+
+By offering these tabs and features, we aim to provide both guest users and registered members with a seamless and engaging fitness experience. Whether you're browsing, creating, or managing workouts, our application is designed to empower you on your fitness journey. Remember that registering an account enhances your experience by granting access to additional features and personalization options.
+
+
+
 
 
 
