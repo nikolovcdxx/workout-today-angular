@@ -41,9 +41,9 @@ To get started with our fitness application and begin enjoying the benefits of w
 **Prerequisites:**
 Before proceeding, ensure you have the following tools and software installed on your computer:
 
-- Node.js*** ***(for both server and client)
-- npm (Node Package Manager, comes with Node.js)
-- Angular CLI (for the client)
+- **Node.js** (for both server and client)
+- **npm** (Node Package Manager, comes with Node.js)
+- **Angular CLI** (for the client)
 
 Additionally, you'll need **MongoDB Compass** installed to connect with the application's backend database.
 
@@ -53,5 +53,6 @@ Additionally, you'll need **MongoDB Compass** installed to connect with the appl
 Download or clone the repository from our version control system (e.g., GitHub).
 
 **2. Navigate to 'server' and 'client' Folders:**
-``Open a terminal window and navigate to both the 'server' and 'client' folders separately using the `cd` command:``
+Open a terminal window and navigate to both the 'server' and 'client' folders separately using the **\`cd`** command:
+> `cd` path/to/fitness-app/server\ `cd` path/to/fitness-app/client
 
