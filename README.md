@@ -1,10 +1,10 @@
 Workout Application Documentation
 
-1. Introduction: The Power of Workout Splits for Push, Pull, and Legs
+**1. Introduction: The Power of Workout Splits for Push, Pull, and Legs**
 
 Welcome to our fitness application, where we're dedicated to helping you achieve your fitness goals with effective and tailored workout routines. One of the key principles we embrace is the concept of workout splits, a strategic approach to organizing your training sessions for maximum efficiency and results. In this section, we'll delve into the world of workout splits and explore the three fundamental categories: push, pull, and legs.
 
-**What are Workout Splits?**
+# What are Workout Splits?
 
 At the heart of a well-structured fitness regimen lies the concept of workout splits. This approach involves dividing your training sessions into specific muscle groups or movement patterns to optimize muscle growth, strength development, and overall progress. By focusing on distinct muscle groups on different days, workout splits allow you to target each area with greater intensity, giving your muscles ample time to recover and adapt between sessions.
 
