@@ -68,5 +68,8 @@ In the 'server' folder, initiate the server using the following command:
 
 The backend server will start and listen on port **http://localhost:3005**.
 
+```sh
+npm run start
+
 
 
