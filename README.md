@@ -118,7 +118,7 @@ So, what are you waiting for? Lace up those sneakers, grab your water bottle, an
 
 Thank you for choosing our fitness application. Here's to a journey filled with strength, determination, and countless victories—both big and small.
 
-Your Fitness Transformation Begins Today. Let's Go!
+**Your Fitness Transformation Begins Today. Let's Go!**
 
 
 
