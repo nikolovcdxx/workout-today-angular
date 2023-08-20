@@ -6,9 +6,10 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LogoutComponent } from './logout/logout.component';
+import { RepassValidatorDirective } from './directives/repass-validator.directive';
 
 @NgModule({
-  declarations: [RegisterComponent, LoginComponent, LogoutComponent],
+  declarations: [RegisterComponent, LoginComponent, LogoutComponent, RepassValidatorDirective],
   imports: [
     CommonModule,
     RouterModule,

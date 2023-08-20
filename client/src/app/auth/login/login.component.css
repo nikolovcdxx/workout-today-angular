@@ -106,4 +106,5 @@
 
 .login-form p {
     color: red;
+    margin-top: unset;
 }
