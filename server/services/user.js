@@ -39,6 +39,7 @@ async function login(username, password) {
 
 function logout(token) {
     blacklist.push(token);
+    
 }
 
 async function getUserByUsername(username) {
